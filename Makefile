@@ -40,11 +40,11 @@ $(B)/%.vondehi: $(B)/% $(O)/vondehi
 	chmod +x $@
 
 $(B)/%.smol: CFLAGS += $(SMOLCFLAGS)
-$(B)/%.smol: | $(B)/%
+$(B)/%.smol: $(B)/%
 	$(E)/smol/smold $(LDFLAGS) $(LIBS) $(filter %.o,$^) -o $@
 
 $(B)/%.bold: CFLAGS += $(BOLDFLAGS)
-$(B)/%.bold: | $(B)/%
+$(B)/%.bold: $(B)/%
 	ln -sf ./ext/bold/runtime/bold_ibh*.o .
 	./ext/bold/bold -c -a $(LIBS) $(filter %.o,$^) -o $@
 	rm -f bold_ibh*.o
