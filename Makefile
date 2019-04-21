@@ -41,7 +41,7 @@ $(B)/%.vondehi: $(B)/% $(O)/vondehi
 
 $(B)/%.smol: CFLAGS += $(SMOLCFLAGS)
 $(B)/%.smol: | $(B)/%
-	$(E)/smol/smol $(LDFLAGS) $(LIBS) $(filter %.o,$^) -o $@
+	$(E)/smol/smold $(LDFLAGS) $(LIBS) $(filter %.o,$^) -o $@
 
 $(B)/%.bold: CFLAGS += $(BOLDFLAGS)
 $(B)/%.bold: | $(B)/%
