@@ -3,12 +3,15 @@
 #include <gtk/gtk.h>
 #include <GL/gl.h>
 
+static void destroy(GtkWidget* widget)
+{
+	gtk_main_quit();
+}
 
 static void setup(GtkGLArea *gl)
 {
 	gtk_gl_area_make_current(gl);
 }
-
 
 static gboolean render(GtkGLArea *gl, GdkGLContext *ctx)
 {
@@ -21,13 +24,13 @@ static gboolean render(GtkGLArea *gl, GdkGLContext *ctx)
 	return TRUE;
 }
 
-
 int main(void) {
 	/* skip one param, who needs it anyway */
 	((void (*)(int *))gtk_init)(NULL);
 
 	/* setup window */
 	GtkWidget *window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+	g_signal_connect(window, "destroy", G_CALLBACK(destroy), NULL);
 	GtkWidget *gl = gtk_gl_area_new();
 	gtk_container_add(GTK_CONTAINER(window), gl);
 	g_signal_connect(gl, "realize", G_CALLBACK(setup), NULL);
