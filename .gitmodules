@@ -1,0 +1,12 @@
+[submodule "ext/smol"]
+	path = ext/smol
+	url = https://github.com/Shizmob/smol
+[submodule "ext/fishypack"]
+	path = ext/fishypack
+	url = https://gitlab.com/PoroCYon/fishypack-trident
+[submodule "ext/vondehi"]
+	path = ext/vondehi
+	url = https://gitlab.com/PoroCYon/vondehi
+[submodule "ext/bold"]
+	path = ext/bold
+	url = http://git.alrj.org/git/bold.git
