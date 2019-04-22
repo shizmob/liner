@@ -28,6 +28,8 @@ int main(void) {
 
 	/* setup window */
 	GtkWidget *window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+	g_signal_connect(window, "destroy", gtk_main_quit, NULL);
+
 	GtkWidget *gl = gtk_gl_area_new();
 	gtk_container_add(GTK_CONTAINER(window), gl);
 	g_signal_connect(gl, "realize", G_CALLBACK(setup), NULL);
