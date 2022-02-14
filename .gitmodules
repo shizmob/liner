@@ -1,6 +1,6 @@
 [submodule "ext/smol"]
 	path = ext/smol
-	url = https://github.com/Shizmob/smol
+	url = https://github.com/PoroCYon/smol
 	branch = reorganize
 [submodule "ext/fishypack"]
 	path = ext/fishypack
